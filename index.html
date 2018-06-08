@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Planilha Online Gratis</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="Main">
+        <header>
+            <div id="Texto">
+                <select id="fonte">
+                    <option value="Fonte">Fonte</option>
+                    <option id="Arial" value="Arial">Arial</option>
+                    <option id="TimesNewRoman" value="Times New Roman">Times New Roman</option>
+                    <option id="Calibri" value="Calibri">Calibri</option>
+                    <option id="CalibriLight" value="Calibri Light">Calibri Light</option>
+                </select>
+                <input id="size" type="number" value="12" placeholder="Tamanho da Fonte" min="1" max="50">
+                <select name="Cor" id="cor">
+                    <option value="Cor">Cor da Fonte</option>
+                    <option id="Preto" value="black">Preto</option>
+                    <option id="Vermelho" value="red">Vermelho</option>
+                    <option id="Laranja" value="orange">Laranja</option>
+                    <option id="Amarelo" value="yellow">Amarelo</option>
+                    <option id="Verde" value="green">Verde</option>
+                    <option id="Azul" value="blue">Azul</option>
+                    <option id="Violeta" value="violet">Violeta</option>
+                </select>
+            </div>
+            <div id="Planilha">
+                <input type="number" placeholder="Colunas">
+                <span><b>X</b></span>
+                <input type="number" placeholder="Linhas">
+                <button id="MontarPlanilha">Montar</button>
+            </div>
+        </header>
+        <div id="PlanilhaMain">
+            <h1>Planilha Online Gratis</h1>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

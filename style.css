@@ -1,0 +1,75 @@
+option#Arial{
+    font-family: Arial;
+}
+option#TimesNewRoman{
+    font-family: 'Times New Roman', Times, serif;
+}
+option#Calibri{
+    font-family: 'Calibri';
+}
+option#CalibriLight{
+    font-family: 'Calibri Light';
+}
+option#Vermelho{
+    color: red;
+}
+option#Laranja{
+    color: orange;
+}
+option#Amarelo{
+    color: yellow;
+}
+option#Verde{
+    color: green;
+}
+option#Azul{
+    color: blue;
+}
+option#Violeta{
+    color: violet;
+}
+header{
+    display: flex;
+    flex-direction: row;
+    background: green;
+    height: 60px;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+input#size{
+    width: 30px;
+    height: 13px;;
+}
+div#Texto{
+    box-sizing: border-box;
+    margin: 0 0 0 10px;
+    height: 20px;
+    align-items: center;
+}
+div#Planilha{
+    width: 200px;
+    display: flex;
+    justify-content: flex-end;
+    box-sizing: border-box;
+    margin: 0 10px 0 0;
+    height: 20px;
+    align-items: center;
+}
+div#Planilha input{
+    width: 35%;
+}
+div#Main{
+    width: 1000px;
+    margin: 0 auto;
+    box-shadow: 5px 5px rgb(155, 155, 155);
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+div#PlanilhaMain{
+    box-sizing: border-box;
+    padding: 10px;
+}
+button#MontarPlanilha{
+    margin-left: 5px;
+}
