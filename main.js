@@ -1,72 +1,69 @@
-console.log('Main.js');
-const fonte = document.querySelector('#fonte');
-const body = document.querySelector('body');
-const size = document.querySelector('#size');
-const cor = document.querySelector('#cor');
-const MontarPlanilha = document.querySelector('#MontarPlanilha');
-const Colunas = document.querySelector('#Colunas');
-const Linhas = document.querySelector('#Linhas');
-const PlanilhaMain = document.querySelector('#PlanilhaMain');
-const Tabela = document.querySelector('body');
+const SelecionarFonte = document.querySelector('#fonte');
+const SizeFonte = document.querySelector('#size');
+const CorFonte = document.querySelector('#cor');
+const TituloPlanilha = document.querySelector('#titulo');
+const FontePlanilha = document.querySelector('#Fonte_Planilha');
+const Cabecalho = document.querySelector('#cabecalho');
+let Dados = document.querySelector('#dados');
+const Fi = document.querySelector('#Fi');
+const Fai = document.querySelector('#Fai');
+const Fr = document.querySelector('#Fr');
+const Far = document.querySelector('Far');
+const Planilha = document.querySelector('#Planilha');
+const CriarPlanilha = document.querySelector('#Criar_Planilha');
 
-fonte.addEventListener('change', function() {
-    if (fonte.firstElementChild.value === 'Fonte') {
-        fonte.firstElementChild.remove();
-    }
-    body.style.fontFamily = fonte.value;
-});
-
-size.addEventListener('change', function() {
-    body.style.fontSize = `${size.value}px`;
-});
-
-cor.addEventListener('change', function() {
-    if (cor.firstElementChild.value === 'Cor') {
-        cor.firstElementChild.remove();
-    }
-    body.style.color = cor.value;
-});
-
-MontarPlanilha.addEventListener('click', function() {
-    let Coluna = '';
-    let Linha = '';
-    let LinhaDasColunas = '';
-    for (let i = 0; i < Colunas.value; i++) {
-        Coluna += `<th><output></th>`;
-    }
-    for (let i = 0; i < Colunas.value; i++) {
-        LinhaDasColunas += `<td><output></td>`;
-    }
-    for (let i = 1; i < Linhas.value; i++) {
-        Linha += `<tr>${LinhaDasColunas}</tr>`;
-    }
-    PlanilhaMain.innerHTML += `<table><thead><tr>${Coluna}</tr></thead><tbody>${Linha}</tbody></table>`;
-});
-
-Tabela.addEventListener('dblclick', function(e) {
-    if (e.target.tagName === 'TD' || e.target.tagName === 'TH') {
-        const ValueTag = e.target.firstElementChild.value;
-        e.target.firstElementChild.remove();
-        const NewElement = document.createElement('input');
-        NewElement.value = ValueTag;
-        NewElement.autofocus = true;
-        e.target.appendChild(NewElement);
-    }
-    if (e.target.tagName === 'OUTPUT') {
-        const ValueTag = e.target.value;
-        const NewElement = document.createElement('input');
-        NewElement.value = ValueTag;
-        NewElement.autofocus = true;
-        e.target.parentElement.appendChild(NewElement);
-        e.target.remove();
+SelecionarFonte.addEventListener('change', function() {
+    Planilha.style.fontFamily = SelecionarFonte.value;
+    if (SelecionarFonte.firstElementChild.value === 'Fonte') {
+        SelecionarFonte.firstElementChild.remove();
     }
 });
+SizeFonte.addEventListener('change', function() {
+    Planilha.style.fontSize = `${SizeFonte.value}px`;
+});
+CorFonte.addEventListener('change', function() {
+    Planilha.style.color = CorFonte.value;
+    if (CorFonte.firstElementChild.value === 'Cor') {
+        CorFonte.firstElementChild.remove();
+    }
+});
+const verificar = function() {
+    Dados = Dados.value.split(';');
+    if (Dados.length > 1) {
+        const usados = [];
+        const quantidadeUsados = [];
+        let verificado = true;
+        let c = 0;
+        let quantidade = 1;
+        for (let i = 0; i < Dados.length; i++, c = 0, verificado = true) {
+            for (; c <= usados.length; c++) {
+                if (usados[c] === Dados[i]) {
+                    verificado = false;
+                    quantidade++;
+                    console.log('oi');
+                }
+            }
+            if (verificado) {
+                usados.push(Dados[i]);
+            }
+            if (c === usados.length) {
+                quantidadeUsados.push(quantidade);
+                quantidade = 0;
+            }
+        }
+        console.log(usados);
+        console.log(quantidadeUsados);
 
-Tabela.addEventListener('keypress', function(e) {
-    if ((e.target.tagName === 'INPUT' && e.target.type === 'text') && e.keyCode === 13) {
-        const BackElement = document.createElement('output');
-        BackElement.value = e.target.value;
-        e.target.parentElement.appendChild(BackElement);
-        e.target.remove();
+    }
+};
+CriarPlanilha.addEventListener('keypress', function(event) {
+    if (event.keyCode === 13) {
+        if ((TituloPlanilha.value !== '') && (FontePlanilha.value !== '')
+    && (Cabecalho.value !== '') && (Dados.value !== '')) {
+            Dados = document.querySelector('#dados');
+            verificar();
+            const caption = `<caption>${TituloPlanilha}</caption>`;
+            Planilha.innerHTML += ``;
+        }
     }
 });

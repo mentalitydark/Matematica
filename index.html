@@ -31,16 +31,30 @@
                     <option id="Violeta" value="violet">Violeta</option>
                 </select>
             </div>
-            <div id="Planilha">
-                <input id="Colunas" type="number" placeholder="Colunas" required>
-                <span><b>X</b></span>
-                <input id="Linhas" type="number" placeholder="Linhas" required>
-                <button id="MontarPlanilha">Montar</button>
-            </div>
         </header>
-        <div id="PlanilhaMain">
-            <h1>Planilha Online Gratis</h1>
-        </div>
+        <fieldset id="Criar_Planilha">
+            <legend>Criar Planilha</legend>
+            <div>
+                <input id="titulo" type="text" placeholder="Título" required>
+                <input id="Fonte_Planilha" type="text" placeholder="Fonte" required>
+            </div>
+            <input type="text" placeholder="Cabeçalho" id="cabecalho">
+            <input type="text" placeholder="Dados (separados por ; )" id="dados">
+            <div>
+                <input type="checkbox" name="Fi" id="Fi" checked>
+                <label for="Fi">Frequência Absoluta</label>
+                <input type="checkbox" name="Fi" id="Fai">
+                <label for="Fai">Frequência Acumulada Absoluta</label>
+                <input type="checkbox" name="Fi" id="Fr">
+                <label for="Fr">Frequência Relativa</label>
+                <input type="checkbox" name="Fi" id="Far">
+                <label for="Far">Frequência Acumulada Relativa</label>
+            </div>
+        </fieldset>
+        <fieldset id="Planilha">
+            <legend>Planilha</legend>
+            <h1>tudo bom?</h1>
+        </fieldset>
     </div>
     <script src="main.js"></script>
 </body>
