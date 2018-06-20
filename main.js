@@ -8,7 +8,7 @@ let Dados = document.querySelector('#dados');
 const Fi = document.querySelector('#Fi');
 const Fai = document.querySelector('#Fai');
 const Fr = document.querySelector('#Fr');
-const Far = document.querySelector('Far');
+const Far = document.querySelector('#Far');
 const Planilha = document.querySelector('#Planilha');
 const CriarPlanilha = document.querySelector('#Criar_Planilha');
 
@@ -27,43 +27,114 @@ CorFonte.addEventListener('change', function() {
         CorFonte.firstElementChild.remove();
     }
 });
-const verificar = function() {
-    Dados = Dados.value.split(';');
-    if (Dados.length > 1) {
-        const usados = [];
-        const quantidadeUsados = [];
-        let verificado = true;
-        let c = 0;
-        let quantidade = 1;
-        for (let i = 0; i < Dados.length; i++, c = 0, verificado = true) {
-            for (; c <= usados.length; c++) {
-                if (usados[c] === Dados[i]) {
-                    verificado = false;
-                    quantidade++;
-                    console.log('oi');
-                }
-            }
-            if (verificado) {
-                usados.push(Dados[i]);
-            }
-            if (c === usados.length) {
-                quantidadeUsados.push(quantidade);
-                quantidade = 0;
-            }
+const quantidade = function() {
+    const dados = Dados.value.split(';');
+    const usados = [];
+    const DadosUsados = [];
+    let verificado = 0;
+    let i = 0;
+    let i2 = 0;
+    for (; i < dados.length; i++, i2 = 0) {
+        for (; i2 < dados.length; i2++) if (dados[i]===dados[i2]) verificado++;
+        if (DadosUsados.indexOf(dados[i]) === -1) DadosUsados.push(dados[i]);
+        else verificado = 0;
+        if (verificado > 0) {
+            usados.push([dados[i], verificado]);
+            verificado = 0;
         }
-        console.log(usados);
-        console.log(quantidadeUsados);
-
+    }
+    return usados;
+};
+const criartd = function(vezes) {
+    let NewTds = '';
+    for (let i = 0; i < vezes; i++) {
+        let Nt = `<td>${quantidade()[i][0]}</td>`;
+        const Nt2 = `<td class="hid">${quantidade()[i][1]}</td>`;
+        NewTds += `<tr>${Nt}${Nt2}</tr>`;
+    }
+    return NewTds;
+};
+const FreAcuA = function() {
+    const tbody = document.querySelector('tbody');
+    let soma = 0;
+    for (let i = 0; i < tbody.children.length; i++) {
+        const NewElement = document.createElement('td');
+        NewElement.className = 'hid2';
+        NewElement.hidden = true;
+        soma += quantidade()[i][1];
+        NewElement.innerText = soma;
+        tbody.children[i].appendChild(NewElement);
+    }
+}
+const hiddenT = function(check) {
+    switch (check) {
+    case 'fi': {
+        const temp = document.querySelectorAll('.hid');
+        for (let i = 0; i < temp.length; i++) {
+            temp[i].hidden = true;
+        }
+        break;
+    }
+    case 'fai': {
+        const temp = document.querySelectorAll('.hid2');
+        for (let i = 0; i < temp.length; i++) {
+            temp[i].hidden = true;
+        }
+        break;
+    }
     }
 };
+const hiddenF = function(check) {
+    switch (check) {
+    case 'fi': {
+        const temp = document.querySelectorAll('.hid');
+        for (let i = 0; i < temp.length; i++) {
+            temp[i].hidden = false;
+        }
+        break;
+    }
+    case 'fai': {
+        const temp = document.querySelectorAll('.hid2');
+        for (let i = 0; i < temp.length; i++) {
+            temp[i].hidden = false;
+        }
+        break;
+    }
+    }
+};
+Fi.addEventListener('change', function() {
+    if (Fi.checked) {
+        hiddenF('fi');
+        document.querySelector('thead').firstChild.children[1].hidden = false;
+    } else {
+        hiddenT('fi');
+        document.querySelector('thead').firstChild.children[1].hidden = true;
+    }
+});
+Fai.addEventListener('change', function() {
+    if (Fai.checked) {
+        hiddenF('fai');
+        document.querySelector('thead').firstChild.children[2].hidden = false;
+    } else {
+        hiddenT('fai');
+        document.querySelector('thead').firstChild.children[2].hidden = true;
+    }
+});
 CriarPlanilha.addEventListener('keypress', function(event) {
     if (event.keyCode === 13) {
         if ((TituloPlanilha.value !== '') && (FontePlanilha.value !== '')
     && (Cabecalho.value !== '') && (Dados.value !== '')) {
             Dados = document.querySelector('#dados');
-            verificar();
-            const caption = `<caption>${TituloPlanilha}</caption>`;
-            Planilha.innerHTML += ``;
+            quantidade();
+            const caption = `<caption>${TituloPlanilha.value}</caption>`;
+            let th = `<th>${Cabecalho.value}</th><th>Frequência Absoluta</th>`;
+            th += `<th hidden>Frequência Acumulada Absoluta</th>`;
+            th += `<th hidden>Frequência Relativa</th>`;
+            th += `<th hidden>Frequência Acumulada Relativa</th>`;
+            const thead = `<thead><tr>${th}</tr></thead>`;
+            const tbody = `<tbody>${criartd(quantidade().length)}</tbody>`;
+            Planilha.innerHTML += `<table>${caption}${thead}${tbody}</table>`;
+            FreAcuA();
         }
     }
 });
