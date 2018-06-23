@@ -12,15 +12,15 @@
     <div id="Main">
         <header>
             <div id="Texto">
-                <select id="fonte">
+                <select id="fonte" disabled>
                     <option value="Fonte">Fonte</option>
                     <option id="Arial" value="Arial">Arial</option>
                     <option id="TimesNewRoman" value="Times New Roman">Times New Roman</option>
                     <option id="Calibri" value="Calibri">Calibri</option>
                     <option id="CalibriLight" value="Calibri Light">Calibri Light</option>
                 </select>
-                <input id="size" type="number" value="12" placeholder="Tamanho da Fonte" min="1" max="50">
-                <select name="Cor" id="cor">
+                <input id="size" type="number" value="20" placeholder="Tamanho da Fonte" min="1" max="50" disabled>
+                <select name="Cor" id="cor" disabled>
                     <option value="Cor">Cor da Fonte</option>
                     <option id="Preto" value="black">Preto</option>
                     <option id="Vermelho" value="red">Vermelho</option>
@@ -41,19 +41,19 @@
             <input type="text" placeholder="Cabeçalho" id="cabecalho">
             <input type="text" placeholder="Dados (separados por ; )" id="dados">
             <div>
-                <input type="checkbox" name="Fi" id="Fi" checked>
+                <input type="checkbox" name="Fi" id="Fi" disabled checked>
                 <label for="Fi">Frequência Absoluta</label>
-                <input type="checkbox" name="Fi" id="Fai">
+                <input type="checkbox" name="Fi" id="Fai" disabled>
                 <label for="Fai">Frequência Acumulada Absoluta</label>
-                <input type="checkbox" name="Fi" id="Fr">
+                <input type="checkbox" name="Fi" id="Fr" disabled>
                 <label for="Fr">Frequência Relativa</label>
-                <input type="checkbox" name="Fi" id="Far">
+                <input type="checkbox" name="Fi" id="Far" disabled>
                 <label for="Far">Frequência Acumulada Relativa</label>
+                <button disabled>Deletar tabela</button>
             </div>
         </fieldset>
         <fieldset id="Planilha">
             <legend>Planilha</legend>
-            <h1>tudo bom?</h1>
         </fieldset>
     </div>
     <script src="main.js"></script>

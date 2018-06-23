@@ -36,6 +36,11 @@ header{
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    background-color: #1F2739;
+    border: 1px solid  black;
+}
+body {
+    background-color: #1F2739;
 }
 input#size{
     width: 30px;
@@ -60,25 +65,69 @@ div#Main{
     box-shadow: 5px 5px rgb(155, 155, 155);
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
+    background-color: #323C50;
 }
 fieldset#Criar_Planilha{
     box-sizing: border-box;
     padding: 10px;
     border: 1px solid gray;
     margin: 5px;
+    background-color: #1F2739;
+    color: white;
 }
 fieldset#Planilha {
     box-sizing: border-box;
     padding: 10px;
     border: 1px solid gray;
     margin: 5px;
+    background-color: #1F2739;
 }
-button#MontarPlanilha{
+legend {
+    color: white
+}
+button{
     margin-left: 5px;
+    border-radius: 7px;
 }
-table {
+input {
+    border-radius: 5px;
+}
+span {
+    /* margin: 0 auto; */
+    /* display: table */
+    width: 80.06%;
+    background-color: #323C50;
+    border-left: 0.5px solid black;
+    border-right: 0.5px solid black;
+    border-bottom: 0.5px solid black;
+    color: #185875;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    box-sizing: border-box;
+    padding: 0.5em;
+    margin: 0;
+}
+#planilhafeita {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    align-items: center;
+}
+button:hover {
+    background-color: rgb(150, 47, 47);
+    color: rgb(20, 7, 7);
+    border: 1px solid black;
+}
+
+/* table {
     margin: 50px;
+    font-size: 20px;
+    text-align: center;
     border:1px solid black;
+}
+.hid {
+    background-color: aqua
 }
 thead {
     box-sizing: border-box;
@@ -101,4 +150,96 @@ td {
 }
 tbody tr > td:first-child {
     font-weight: bold;
+} */
+caption {
+    background-color: #323C50;
+    font-weight: bold;
+    font-size: 2em;
+    text-align: center;
+    color: #185875;
+    padding: 0.3em;
+    box-sizing: border-box;
+    border-left: 0.5px solid black;
+    border-right: 0.5px solid black;
+    border-top: 0.5px solid black;
+}
+.container th h1 {
+    font-weight: bold;
+    font-size: 1em;
+    text-align: left;
+    color: #185875;
+}
+
+.container td {
+    font-weight: normal;
+    font-size: 1em;
+    -webkit-box-shadow: 0 2px 2px -2px #0E1119;
+    -moz-box-shadow: 0 2px 2px -2px #0E1119;
+    box-shadow: 0 2px 2px -2px #0E1119;
+}
+
+.container {
+    text-align: left;
+    overflow: hidden;
+    width: 80%;
+    /* margin: 0 auto; */
+    display: table;
+    padding: 0 0 8em 0;
+    border: 0.5px solid ;lack
+}
+
+.container td,
+.container th {
+    padding-bottom: 2%;
+    padding-top: 2%;
+    padding-left: 2%;
+}
+
+/* Background-color of the odd rows */
+
+.container tr:nth-child(odd) {
+    background-color: #323C50;
+}
+/* Background-color of the even rows */
+
+.container tr:nth-child(even) {
+    background-color: #2C3446;
+}
+
+.container th {
+    background-color: #1F2739;
+}
+
+/* .container td:first-child {
+    color: #FB667A;
+} */
+
+.container tr:hover {
+    background-color: #464A52;
+    -webkit-box-shadow: 0 6px 6px -6px #0E1119;
+    -moz-box-shadow: 0 6px 6px -6px #0E1119;
+    box-shadow: 0 6px 6px -6px #0E1119;
+}
+
+.container td:hover {
+    background-color: #FFF842;
+    color: #403E10;
+    font-weight: bold;
+    box-shadow: #7F7C21 -1px 1px, #7F7C21 -2px 2px, #7F7C21 -3px 3px, #7F7C21 -4px 4px, #7F7C21 -5px 5px, #7F7C21 -6px 6px;
+    transform: translate3d(6px, -6px, 0);
+    transition-delay: 0s;
+    transition-duration: 0.4s;
+    transition-property: all;
+    transition-timing-function: line;
+}
+.container th:hover {
+    background-color: #FFF842;
+    color: #403E10;
+    font-weight: bold;
+    box-shadow: #7F7C21 -1px 1px, #7F7C21 -2px 2px, #7F7C21 -3px 3px, #7F7C21 -4px 4px, #7F7C21 -5px 5px, #7F7C21 -6px 6px;
+    transform: translate3d(6px, -6px, 0);
+    transition-delay: 0s;
+    transition-duration: 0.4s;
+    transition-property: all;
+    transition-timing-function: line;
 }
