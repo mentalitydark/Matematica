@@ -26,6 +26,7 @@ const enabled = function() {
     Dados.disabled = true;
     FontePlanilha.disabled = true;
     Cabecalho.disabled = true;
+    button.hidden = false;
 };
 button.addEventListener('click', function() {
     document.querySelector('table').parentElement.remove();
@@ -45,6 +46,7 @@ button.addEventListener('click', function() {
     Fr.checked = false;
     Far.checked = false;
     button.disabled = true;
+    button.hidden = true;
 });
 SelecionarFonte.addEventListener('change', function() {
     document.querySelector('thead').style.fontFamily = SelecionarFonte.value;

@@ -88,6 +88,7 @@ legend {
 button{
     margin-left: 5px;
     border-radius: 7px;
+    transition: 0.3s;
 }
 input {
     border-radius: 5px;
@@ -95,7 +96,7 @@ input {
 span {
     /* margin: 0 auto; */
     /* display: table */
-    width: 80.06%;
+    width: 100%;
     background-color: #323C50;
     border-left: 0.5px solid black;
     border-right: 0.5px solid black;
@@ -115,8 +116,8 @@ span {
     align-items: center;
 }
 button:hover {
-    background-color: rgb(150, 47, 47);
-    color: rgb(20, 7, 7);
+    background-color: rgb(150, 9, 9);
+    color: rgb(255, 251, 251);
     border: 1px solid black;
 }
 
@@ -181,7 +182,7 @@ caption {
 .container {
     text-align: left;
     overflow: hidden;
-    width: 80%;
+    width: 100%;
     /* margin: 0 auto; */
     display: table;
     padding: 0 0 8em 0;
