@@ -119,39 +119,13 @@ button:hover {
     background-color: rgb(150, 9, 9);
     color: rgb(255, 251, 251);
     border: 1px solid black;
+    transform: translate3d(3px,-3px,0);
+    box-shadow: -1px 1px rgb(20, 1, 1),
+    -2px 2px rgb(20, 1, 1),
+    -3px 3px rgb(20, 1, 1);
+    transition-delay: 0.1s;
+    transition-duration: 0.6s;
 }
-
-/* table {
-    margin: 50px;
-    font-size: 20px;
-    text-align: center;
-    border:1px solid black;
-}
-.hid {
-    background-color: aqua
-}
-thead {
-    box-sizing: border-box;
-    border: 1px solid gray;
-}
-th {
-    box-sizing: border-box;
-    border: 1px solid gray;
-    padding: 3px;
-    font-weight: bold;
-    min-width: 50px;
-    height: 15px;
-}
-td {
-    box-sizing: border-box;
-    border: 1px solid gray;
-    padding: 3px;
-    min-width: 50px;
-    height: 15px;
-}
-tbody tr > td:first-child {
-    font-weight: bold;
-} */
 caption {
     background-color: #323C50;
     font-weight: bold;
