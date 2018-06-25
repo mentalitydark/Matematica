@@ -41,15 +41,23 @@
             </div>
             <input type="text" placeholder="Cabeçalho" id="cabecalho">
             <input type="text" placeholder="Dados (separados por ; )" id="dados">
-            <div>
-                <input type="checkbox" name="Fi" id="Fi" disabled checked>
-                <label for="Fi">Frequência Absoluta</label>
-                <input type="checkbox" name="Fi" id="Fai" disabled>
-                <label for="Fai">Frequência Acumulada Absoluta</label>
-                <input type="checkbox" name="Fi" id="Fr" disabled>
-                <label for="Fr">Frequência Relativa</label>
-                <input type="checkbox" name="Fi" id="Far" disabled>
-                <label for="Far">Frequência Acumulada Relativa</label>
+            <div id="checkbox">
+                <div>
+                    <input type="checkbox" name="Fi" id="Fi" disabled checked>
+                    <label for="Fi">Frequência Absoluta</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="Fi" id="Fai" disabled>
+                    <label for="Fai">Frequência Acumulada Absoluta</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="Fi" id="Fr" disabled>
+                    <label for="Fr">Frequência Relativa</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="Fi" id="Far" disabled>
+                    <label for="Far">Frequência Acumulada Relativa</label>
+                </div>
                 <button disabled hidden>Deletar tabela</button>
             </div>
         </fieldset>
@@ -57,6 +65,6 @@
             <legend>Planilha</legend>
         </fieldset>
     </div>
-    <script src="main.js" type="module"></script>
+    <script src="main.js"></script>
 </body>
 </html>
