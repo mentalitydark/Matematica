@@ -1,11 +1,12 @@
 html {
     background: linear-gradient(to bottom right, rgba(46, 65, 114, 0.692), #CBDBFF, #8d74d1);
     min-height: 100%;
+    min-width: 310px;
 }
 
-div#Main{
+div#Main {
     max-width: 1000px;
-    min-width: 520px;
+    min-width: 300px;
     min-height: 100%;
     margin: 0 auto;
     border: 0.5px solid black;
@@ -15,7 +16,7 @@ div#Main{
     background: #423075;
 }
 
-header{
+header {
     display: flex;
     flex-direction: row;
     height: 60px;
@@ -23,11 +24,11 @@ header{
     align-items: center;
     width: 100%;
     background: linear-gradient(to bottom right, #2E4172, #8d74d1);
-    border: 1px solid  black;
+    border: 1px solid black;
     box-sizing: border-box;
 }
 
-div#Texto{
+div#Texto {
     box-sizing: border-box;
     margin: 0 0 0 10px;
     height: 20px;
@@ -39,51 +40,44 @@ select {
     box-shadow: -1px 2px rgb(175, 175, 175);
 }
 
-option#Arial{
+option#Arial {
     font-family: Arial;
 }
 
-option#TimesNewRoman{
+option#TimesNewRoman {
     font-family: 'Times New Roman', Times, serif;
 }
 
-option#Calibri{
+option#Calibri {
     font-family: 'Calibri';
 }
 
-option#CalibriLight{
+option#CalibriLight {
     font-family: 'Calibri Light';
 }
 
-option#Vermelho{
+option#Vermelho {
     color: red;
 }
 
-option#Laranja{
+option#Laranja {
     color: orange;
 }
 
-option#Amarelo{
+option#Amarelo {
     color: yellow;
 }
 
-option#Verde{
+option#Verde {
     color: green;
 }
 
-option#Azul{
+option#Azul {
     color: blue;
 }
 
-option#Violeta{
+option#Violeta {
     color: violet;
-}
-
-input#size{
-    width: 30px;
-    height: 13px;
-    box-shadow: -2px 2px rgb(155, 155, 155);
-    padding-left: 2px;
 }
 
 input[type="text"] {
@@ -92,7 +86,7 @@ input[type="text"] {
     padding-left: 3px;
 }
 
-fieldset#Criar_Planilha{
+fieldset#Criar_Planilha {
     box-sizing: border-box;
     padding: 10px;
     border: 1px solid gray;
@@ -101,11 +95,17 @@ fieldset#Criar_Planilha{
     color: white;
 }
 
+#checkbox {
+    display: flex;
+    flex-direction: row;
+    color: white;
+}
+
 input {
     border-radius: 5px;
 }
 
-button{
+button {
     margin-left: 5px;
     border-radius: 7px;
     transition: 0.3s;
@@ -116,10 +116,8 @@ button:hover {
     background-color: rgb(150, 9, 9);
     color: rgb(255, 251, 251);
     border: 1px solid black;
-    transform: translate3d(3px,-3px,0);
-    box-shadow: -1px 1px rgb(20, 1, 1),
-    -2px 2px rgb(20, 1, 1),
-    -3px 3px rgb(20, 1, 1);
+    transform: translate3d(3px, -3px, 0);
+    box-shadow: -1px 1px rgb(20, 1, 1), -2px 2px rgb(20, 1, 1), -3px 3px rgb(20, 1, 1);
     transition-delay: 0s;
     transition-duration: 0.3s;
 }
@@ -132,7 +130,7 @@ fieldset#Planilha {
     background: linear-gradient(to bottom right, #2E4172, #8d74d1);
 }
 
-fieldset > div{
+fieldset>div {
     display: block;
     margin: 0 0 2px 0;
 }
@@ -203,12 +201,7 @@ caption {
     background-color: rgb(57, 103, 252);
     color: #403E10;
     font-weight: bold;
-    box-shadow:rgb(18, 31, 105) -1px 1px,
-    rgb(18, 31, 105) -2px 2px,
-    rgb(18, 31, 105) -3px 3px,
-    rgb(18, 31, 105) -4px 4px,
-    rgb(18, 31, 105) -5px 5px,
-    rgb(18, 31, 105) -6px 6px;
+    box-shadow: rgb(18, 31, 105) -1px 1px, rgb(18, 31, 105) -2px 2px, rgb(18, 31, 105) -3px 3px, rgb(18, 31, 105) -4px 4px, rgb(18, 31, 105) -5px 5px, rgb(18, 31, 105) -6px 6px;
     transform: translate3d(6px, -6px, 0);
     transition-delay: 0s;
     transition-duration: 0.4s;
@@ -229,12 +222,7 @@ caption {
     background-color: rgb(57, 103, 252);
     color: #403E10;
     font-weight: bold;
-    box-shadow:rgb(18, 31, 105) -1px 1px,
-    rgb(18, 31, 105) -2px 2px,
-    rgb(18, 31, 105) -3px 3px,
-    rgb(18, 31, 105) -4px 4px,
-    rgb(18, 31, 105) -5px 5px,
-    rgb(18, 31, 105) -6px 6px;
+    box-shadow: rgb(18, 31, 105) -1px 1px, rgb(18, 31, 105) -2px 2px, rgb(18, 31, 105) -3px 3px, rgb(18, 31, 105) -4px 4px, rgb(18, 31, 105) -5px 5px, rgb(18, 31, 105) -6px 6px;
     transform: translate3d(6px, -6px, 0);
     transition-delay: 0s;
     transition-duration: 0.4s;
@@ -255,19 +243,50 @@ span {
     padding: 0.5em;
     margin: 0;
 }
+
 #planilhafeita span:hover {
     background-color: rgb(57, 103, 252);
     color: #403E10;
     font-weight: bold;
-    box-shadow: rgb(18, 31, 105) -1px 1px,
-    rgb(18, 31, 105) -2px 2px,
-    rgb(18, 31, 105) -3px 3px,
-    rgb(18, 31, 105) -4px 4px,
-    rgb(18, 31, 105) -5px 5px,
-    rgb(18, 31, 105) -6px 6px;
+    box-shadow: rgb(18, 31, 105) -1px 1px, rgb(18, 31, 105) -2px 2px, rgb(18, 31, 105) -3px 3px, rgb(18, 31, 105) -4px 4px, rgb(18, 31, 105) -5px 5px, rgb(18, 31, 105) -6px 6px;
     transform: translate3d(6px, -6px, 0);
     transition-delay: 0s;
     transition-duration: 0.4s;
     transition-property: all;
     transition-timing-function: line;
+}
+
+@media (max-width: 912px) {
+    #Criar_Planilha div:last-child {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 600px) {
+    #Criar_Planilha div:last-child {
+        display: flex;
+        flex-direction: column;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    #Criar_Planilha div:last-child div {
+        margin: 5px 0px 5px 0px;
+    }
+    .container, span {
+        font-size: 0.55em;
+    }
+    caption {
+        font-size: 1.3em;
+    }
+    #Criar_Planilha input[type="text"] {
+        width: 100%;
+        margin: 5px 0px;
+        text-align: center;
+    }
+}
+@media (max-width: 380) {
+    .container {
+        font-size: 0.8em;
+    }
 }

@@ -1,5 +1,4 @@
 const SelecionarFonte = document.querySelector('#fonte');
-const SizeFonte = document.querySelector('#size');
 const CorFonte = document.querySelector('#cor');
 const TituloPlanilha = document.querySelector('#titulo');
 const FontePlanilha = document.querySelector('#Fonte_Planilha');
@@ -20,7 +19,6 @@ const enabled = function() {
     Far.disabled = false;
     button.disabled = false;
     SelecionarFonte.disabled = false;
-    SizeFonte.disabled = false;
     CorFonte.disabled = false;
     TituloPlanilha.disabled = true;
     Dados.disabled = true;
@@ -28,6 +26,7 @@ const enabled = function() {
     Cabecalho.disabled = true;
     button.hidden = false;
 };
+
 button.addEventListener('click', function() {
     document.querySelector('table').parentElement.remove();
     Fi.disabled = true;
@@ -35,7 +34,6 @@ button.addEventListener('click', function() {
     Fr.disabled = true;
     Far.disabled = true;
     SelecionarFonte.disabled = true;
-    SizeFonte.disabled = true;
     CorFonte.disabled = true;
     TituloPlanilha.disabled = false;
     Dados.disabled = false;
@@ -48,28 +46,25 @@ button.addEventListener('click', function() {
     button.disabled = true;
     button.hidden = true;
 });
-SelecionarFonte.addEventListener('change', function() {
+SelecionarFonte.addEventListener('change', function () {
     document.querySelector('thead').style.fontFamily = SelecionarFonte.value;
     document.querySelector('tbody').style.fontFamily = SelecionarFonte.value;
     if (SelecionarFonte.firstElementChild.value === 'Fonte') {
         SelecionarFonte.firstElementChild.remove();
     }
 });
-SizeFonte.addEventListener('change', function() {
-    document.querySelector('thead').style.fontSize = `${SizeFonte.value}px`;
-    document.querySelector('tbody').style.fontSize = `${SizeFonte.value}px`;
-});
-CorFonte.addEventListener('change', function() {
+CorFonte.addEventListener('change', function () {
     document.querySelector('thead').style.color = CorFonte.value;
     document.querySelector('tbody').style.color = CorFonte.value;
     if (CorFonte.firstElementChild.value === 'Cor') {
         CorFonte.firstElementChild.remove();
     }
 });
+
 function sortfunction(a, b) {
     return (a - b);
 }
-const quantidade = function() {
+const quantidade = function () {
     const dados = Dados.value.split(';');
     dados.sort(sortfunction);
     const usados = [];
@@ -78,7 +73,8 @@ const quantidade = function() {
     let i = 0;
     let i2 = 0;
     for (; i < dados.length; i++, i2 = 0) {
-        for (; i2 < dados.length; i2++) if (dados[i]===dados[i2]) verificado++;
+        for (; i2 < dados.length; i2++)
+            if (dados[i] === dados[i2]) verificado++;
         if (DadosUsados.indexOf(dados[i]) === -1) DadosUsados.push(dados[i]);
         else verificado = 0;
         if (verificado > 0) {
@@ -88,7 +84,7 @@ const quantidade = function() {
     }
     return usados;
 };
-const criartd = function(vezes) {
+const criartd = function (vezes) {
     let NewTds = '';
     for (let i = 0; i < vezes; i++) {
         const Nt = `<td>${quantidade()[i][0]}</td>`;
@@ -97,7 +93,7 @@ const criartd = function(vezes) {
     }
     return NewTds;
 };
-const freacua = function() {
+const freacua = function () {
     const tbody = document.querySelector('tbody');
     let soma = 0;
     for (let i = 0; i < tbody.children.length; i++) {
@@ -109,7 +105,7 @@ const freacua = function() {
         tbody.children[i].appendChild(NewElement);
     }
 };
-const frerel = function() {
+const frerel = function () {
     const tbody = document.querySelector('tbody');
     let soma = 0;
     let quantidad = 0;
@@ -125,7 +121,7 @@ const frerel = function() {
         tbody.children[i].appendChild(NewElement);
     }
 };
-const frerelacu = function() {
+const frerelacu = function () {
     const tbody = document.querySelector('tbody');
     let soma = 0;
     let quantidad = 0;
@@ -137,79 +133,87 @@ const frerelacu = function() {
         NewElement.className = 'hid4';
         NewElement.hidden = true;
         soma += (quantidade()[i][1] * 100) / quantidad;
-        soma = ((soma*1).toFixed(2))*1;
-        if (i === tbody.children.length-1) {
+        soma = ((soma * 1).toFixed(2)) * 1;
+        if (i === tbody.children.length - 1) {
             soma = parseFloat(soma.toFixed(0));
         }
         NewElement.innerText = `${soma}%`;
         tbody.children[i].appendChild(NewElement);
     }
 };
-const hiddenT = function(check) {
+const hiddenT = function (check) {
     switch (check) {
-    case 'fi': {
-        const temp = document.querySelectorAll('.hid');
-        for (let i = 0; i < temp.length; i++) {
-            temp[i].hidden = true;
-        }
-        break;
-    }
-    case 'fai': {
-        const temp = document.querySelectorAll('.hid2');
-        for (let i = 0; i < temp.length; i++) {
-            temp[i].hidden = true;
-        }
-        break;
-    }
-    case 'fr': {
-        const temp = document.querySelectorAll('.hid3');
-        for (let i = 0; i < temp.length; i++) {
-            temp[i].hidden = true;
-        }
-        break;
-    }
-    case 'far': {
-        const temp = document.querySelectorAll('.hid4');
-        for (let i = 0; i < temp.length; i++) {
-            temp[i].hidden = true;
-        }
-        break;
-    }
+        case 'fi':
+            {
+                const temp = document.querySelectorAll('.hid');
+                for (let i = 0; i < temp.length; i++) {
+                    temp[i].hidden = true;
+                }
+                break;
+            }
+        case 'fai':
+            {
+                const temp = document.querySelectorAll('.hid2');
+                for (let i = 0; i < temp.length; i++) {
+                    temp[i].hidden = true;
+                }
+                break;
+            }
+        case 'fr':
+            {
+                const temp = document.querySelectorAll('.hid3');
+                for (let i = 0; i < temp.length; i++) {
+                    temp[i].hidden = true;
+                }
+                break;
+            }
+        case 'far':
+            {
+                const temp = document.querySelectorAll('.hid4');
+                for (let i = 0; i < temp.length; i++) {
+                    temp[i].hidden = true;
+                }
+                break;
+            }
     }
 };
-const hiddenF = function(check) {
+const hiddenF = function (check) {
     switch (check) {
-    case 'fi': {
-        const temp = document.querySelectorAll('.hid');
-        for (let i = 0; i < temp.length; i++) {
-            temp[i].hidden = false;
-        }
-        break;
-    }
-    case 'fai': {
-        const temp = document.querySelectorAll('.hid2');
-        for (let i = 0; i < temp.length; i++) {
-            temp[i].hidden = false;
-        }
-        break;
-    }
-    case 'fr': {
-        const temp = document.querySelectorAll('.hid3');
-        for (let i = 0; i < temp.length; i++) {
-            temp[i].hidden = false;
-        }
-        break;
-    }
-    case 'far': {
-        const temp = document.querySelectorAll('.hid4');
-        for (let i = 0; i < temp.length; i++) {
-            temp[i].hidden = false;
-        }
-        break;
-    }
+        case 'fi':
+            {
+                const temp = document.querySelectorAll('.hid');
+                for (let i = 0; i < temp.length; i++) {
+                    temp[i].hidden = false;
+                }
+                break;
+            }
+        case 'fai':
+            {
+                const temp = document.querySelectorAll('.hid2');
+                for (let i = 0; i < temp.length; i++) {
+                    temp[i].hidden = false;
+                }
+                break;
+            }
+        case 'fr':
+            {
+                const temp = document.querySelectorAll('.hid3');
+                for (let i = 0; i < temp.length; i++) {
+                    temp[i].hidden = false;
+                }
+                break;
+            }
+        case 'far':
+            {
+                const temp = document.querySelectorAll('.hid4');
+                for (let i = 0; i < temp.length; i++) {
+                    temp[i].hidden = false;
+                }
+                break;
+            }
     }
 };
-Fi.addEventListener('change', function() {
+Fi.addEventListener('change', function () {
     if (Fi.checked) {
         hiddenF('fi');
         document.querySelector('thead').firstChild.children[1].hidden = false;
@@ -218,7 +222,7 @@ Fi.addEventListener('change', function() {
         document.querySelector('thead').firstChild.children[1].hidden = true;
     }
 });
-Fai.addEventListener('change', function() {
+Fai.addEventListener('change', function () {
     if (Fai.checked) {
         hiddenF('fai');
         document.querySelector('thead').firstChild.children[2].hidden = false;
@@ -227,7 +231,7 @@ Fai.addEventListener('change', function() {
         document.querySelector('thead').firstChild.children[2].hidden = true;
     }
 });
-Fr.addEventListener('change', function() {
+Fr.addEventListener('change', function () {
     if (Fr.checked) {
         hiddenF('fr');
         document.querySelector('thead').firstChild.children[3].hidden = false;
@@ -236,7 +240,7 @@ Fr.addEventListener('change', function() {
         document.querySelector('thead').firstChild.children[3].hidden = true;
     }
 });
-Far.addEventListener('change', function() {
+Far.addEventListener('change', function () {
     if (Far.checked) {
         hiddenF('far');
         document.querySelector('thead').firstChild.children[4].hidden = false;
@@ -245,11 +249,11 @@ Far.addEventListener('change', function() {
         document.querySelector('thead').firstChild.children[4].hidden = true;
     }
 });
-const total = function() {
+const total = function () {
     const tbody = document.querySelector('tbody');
     let fa = 0;
     for (let i = 0; i < quantidade().length; i++) {
-        fa+=quantidade()[i][1];
+        fa += quantidade()[i][1];
     }
     const td1 = document.createElement('td');
     const td2 = document.createElement('td');
@@ -276,11 +280,11 @@ const total = function() {
     tr.append(td5);
     tbody.appendChild(tr);
 };
-CriarPlanilha.addEventListener('keypress', function(event) {
+CriarPlanilha.addEventListener('keypress', function (event) {
     if (event.keyCode === 13) {
-        if ((TituloPlanilha.value !== '') && (FontePlanilha.value !== '')
-    && (Cabecalho.value !== '') && (Dados.value !== '')
-&& (TituloPlanilha.disabled === false)) {
+        if ((TituloPlanilha.value !== '') && (FontePlanilha.value !== '') &&
+            (Cabecalho.value !== '') && (Dados.value !== '') &&
+            (TituloPlanilha.disabled === false)) {
             Dados = document.querySelector('#dados');
             quantidade();
             const caption = `<caption>${TituloPlanilha.value}</caption>`;
@@ -291,7 +295,7 @@ CriarPlanilha.addEventListener('keypress', function(event) {
             th += `<th hidden><h1>Frequência Acumulada Relativa</h1></th>`;
             const thead = `<thead id="thead"><tr>${th}</tr></thead>`;
             const tbody = `<tbody id="tbody">${criartd(quantidade().length)}</tbody>`;
-            Planilha.innerHTML += `<div id="planilhafeita"><table class="container">${caption}${thead}${tbody}</table><span>Fonte:${FontePlanilha.value}</span></div>`;
+            Planilha.innerHTML += `<div id="planilhafeita"><table class="container">${caption}${thead}${tbody}</table><span>Fonte: ${FontePlanilha.value}</span></div>`;
             freacua();
             frerel();
             frerelacu();

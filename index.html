@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <link rel="stylesheet" href="Css/reset.css">
     <link rel="stylesheet" href="Css/style.css">
 </head>
+
 <body>
     <div id="Main">
         <header>
@@ -20,7 +22,6 @@
                     <option id="Calibri" value="Calibri">Calibri</option>
                     <option id="CalibriLight" value="Calibri Light">Calibri Light</option>
                 </select>
-                <input id="size" type="number" value="20" placeholder="Tamanho da Fonte" min="1" max="20" disabled>
                 <select name="Cor" id="cor" disabled>
                     <option value="Cor">Cor da Fonte</option>
                     <option id="Preto" value="black">Preto</option>
@@ -41,15 +42,23 @@
             </div>
             <input type="text" placeholder="Cabeçalho" id="cabecalho">
             <input type="text" placeholder="Dados (separados por ; )" id="dados">
-            <div>
-                <input type="checkbox" name="Fi" id="Fi" disabled checked>
-                <label for="Fi">Frequência Absoluta</label>
-                <input type="checkbox" name="Fi" id="Fai" disabled>
-                <label for="Fai">Frequência Acumulada Absoluta</label>
-                <input type="checkbox" name="Fi" id="Fr" disabled>
-                <label for="Fr">Frequência Relativa</label>
-                <input type="checkbox" name="Fi" id="Far" disabled>
-                <label for="Far">Frequência Acumulada Relativa</label>
+            <div id="checkbox">
+                <div>
+                    <input type="checkbox" name="Fi" id="Fi" disabled checked>
+                    <label for="Fi">Frequência Absoluta</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="Fi" id="Fai" disabled>
+                    <label for="Fai">Frequência Acumulada Absoluta</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="Fi" id="Fr" disabled>
+                    <label for="Fr">Frequência Relativa</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="Fi" id="Far" disabled>
+                    <label for="Far">Frequência Acumulada Relativa</label>
+                </div>
                 <button disabled hidden>Deletar tabela</button>
             </div>
         </fieldset>
@@ -57,6 +66,7 @@
             <legend>Planilha</legend>
         </fieldset>
     </div>
-    <script src="main.js" type="module"></script>
+    <script src="main.js"></script>
 </body>
+
 </html>
